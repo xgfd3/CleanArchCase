@@ -7,7 +7,6 @@ import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
 import javax.inject.Inject;
-import javax.inject.Named;
 import study.cleanarchcase.R;
 import study.cleanarchcase.internal.di.HasComponent;
 import study.cleanarchcase.internal.di.component.DaggerUserComponent;
@@ -18,7 +17,7 @@ import study.cleanarchcase.ui.view.UserListView;
 public class UserListActivity extends BaseActivity implements HasComponent<UserComponent>{
   UserComponent userComponent;
 
-  @Inject @Named("userlist")
+  @Inject
   UserListView userListView;
 
   @Override public Fragment getContainerFragment() {

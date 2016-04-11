@@ -9,31 +9,15 @@
       app:actionViewClass="android.support.v7.widget.SearchView"
       app:showAsAction="ifRoom|collapseActionView"/>
   <item
-      android:id="@+id/action_edit"
-      android:icon="@android:drawable/ic_menu_edit"
-      android:title="@string/action_bar_edit"
-      app:showAsAction="always"/>
+      android:id="@+id/action_about"
+      android:enabled="true"
+      android:title="@string/action_bar_about"
+      app:showAsAction="never"/>
   <item
-      android:id="@+id/action_share"
-      android:enabled="false"
-      android:icon="@android:drawable/ic_menu_share"
-      android:title="@string/action_bar_share"
-      app:showAsAction="ifRoom"/>
-  <item
-      android:id="@+id/action_sort"
-      android:icon="@android:drawable/ic_menu_sort_by_size"
-      android:title="@string/action_bar_sort"
-      app:showAsAction="ifRoom">
-    <menu>
-      <item
-          android:id="@+id/action_sort_size"
-          android:icon="@android:drawable/ic_menu_sort_by_size"
-          android:title="@string/action_bar_sort_size"/>
-      <item
-          android:id="@+id/action_sort_alpha"
-          android:icon="@android:drawable/ic_menu_sort_alphabetically"
-          android:title="@string/action_bar_sort_alpha"/>
-    </menu>
+      android:id="@+id/action_feedback"
+      android:enabled="true"
+      android:title="@string/action_bar_feedback"
+      app:showAsAction="never">
   </item>
 
 </menu>

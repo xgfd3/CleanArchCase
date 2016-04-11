@@ -1,6 +1,11 @@
 package study.cleanarchcase.internal.di.modules;
 
 import dagger.Module;
+import dagger.Provides;
+import javax.inject.Named;
+import study.cleanarchcase.http.GetUserListCase;
+import study.cleanarchcase.http.UserCase;
+import study.cleanarchcase.internal.di.PerActivity;
 
 /**
  * Created by xucz on 4/10/16.
@@ -16,5 +21,5 @@ public class UserModule {
     this.userId = userId;
   }
 
-
+  @Provides @PerActivity @Named("userlist") UserCase provideGetUserListCase(GetUserListCase getUserListCase){return getUserListCase;}
 }

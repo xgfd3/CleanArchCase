@@ -3,6 +3,8 @@ package study.cleanarchcase.ui.fragment;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,12 +46,22 @@ public class UserListFragment extends BaseFragment implements UserListView{
 
   @Override public void onViewCreated(View view, Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
+    initView();
     getComponent(UserComponent.class).inject(this);
+    userListPresenter.setUserListView(this);
     userListPresenter.initialize();
+  }
+
+  private void initView() {
+    rv_userlist.setHasFixedSize(true);
+    rv_userlist.setLayoutManager(
+        new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+    ((DefaultItemAnimator)rv_userlist.getItemAnimator()).setSupportsChangeAnimations(true);
   }
 
   @Override public void initUserList(List<User> users) {
     ListAdapter listAdapter = new ListAdapter(getActivity(), users);
     rv_userlist.setAdapter(listAdapter);
   }
+
 }

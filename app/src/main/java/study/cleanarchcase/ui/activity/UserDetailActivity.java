@@ -2,7 +2,6 @@ package study.cleanarchcase.ui.activity;
 
 import android.app.Fragment;
 import javax.inject.Inject;
-import javax.inject.Named;
 import study.cleanarchcase.internal.di.HasComponent;
 import study.cleanarchcase.internal.di.component.DaggerUserComponent;
 import study.cleanarchcase.internal.di.component.UserComponent;
@@ -16,7 +15,7 @@ public class UserDetailActivity extends BaseActivity implements HasComponent<Use
 
   UserComponent userComponent;
 
-  @Inject @Named("userdetail")
+  @Inject
   UserDetailView userDetailView;
 
   @Override public Fragment getContainerFragment() {
