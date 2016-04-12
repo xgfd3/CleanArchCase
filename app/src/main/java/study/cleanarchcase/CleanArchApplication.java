@@ -17,7 +17,9 @@ public class CleanArchApplication extends Application{
     super.onCreate();
     this.applicationComponent = DaggerApplicationComponent.builder()
         .applicationModule(new ApplicationModule(this)).build();
+    FrescoInitialize.init(this);
   }
 
   public ApplicationComponent getApplicationComponent(){return  this.applicationComponent;}
+
 }
